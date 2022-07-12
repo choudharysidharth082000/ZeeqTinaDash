@@ -11,6 +11,9 @@ body {
 .middleSlider::-webkit-scrollbar {
   display: none;
 }
+.agentShowCase::-webkit-scrollbar {
+  display: none;
+}
 .containorBody::-webkit-scrollbar {
   display: none;
 }
