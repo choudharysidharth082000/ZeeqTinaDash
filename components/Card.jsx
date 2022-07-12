@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
-const Card = () => {
-  const [heading, setHeading] = useState(false);
+const Card = (props) => {
+  const [heading, setHeading] = useState(true);
   const hoverChange = () => {
     setHeading(false);
   };
@@ -23,14 +23,14 @@ const Card = () => {
           onMouseLeave={newHover}
         >
           {heading ? (
-            <h1 className="m-1">Host : 4</h1>
+            <h1 className="m-1">Host : <span>{props.host}</span></h1>
           ) : (
             <h1 className="m-1 text-[#FF5E0E]">
               Know More <DirectionsIcon />
             </h1>
           )}
         </div>
-        <h1 className="m-1">Application : 4</h1>
+        <h1 className="m-1">Application : {props.application}</h1>
         <div className="Application p-2 border border-dashed rounded-md border-slate-400 bg-gray-50 w-48 m-3 flex justify-center flex-col">
           <h1 className="m-1 text-sm">
             MSSQL : <span>0</span>
