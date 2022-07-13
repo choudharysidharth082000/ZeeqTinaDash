@@ -13,9 +13,8 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const fetchJobs = await axios.get(
-        `http://localhost:3001/v1/tina/agents/findCountAll`
+        `http://localhost:3001/v1/tina/agents/getAgent`
       );
-      console.log(fetchJobs);
       setData(fetchJobs.data);
     } catch (error) {
       console.log(error);
@@ -33,14 +32,12 @@ const Home = () => {
         <Card host={data.countAgent} application={data.countApplication}/>
         <Card host={data.countAgent} application={data.countApplication}/>
       </div>
-      <div className="agentShowCase w-full p-4 my-5 bg-gray-50 flex justify-around items-center overflow-y-scroll">
-        <CardAgent />
-        <CardAgent />
+      <div className="agentShowCase w-[90%] p-4 my-5 flex justify-around items-center overflow-y-scroll px-10 bg-gray-50">
+         
         <CardAgent /> 
         <CardAgent /> 
-        <CardAgent /> 
-        <CardAgent />
       </div>
+        
     </div>
 
   );
